@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #08090a;
+  --panel: #121417;
+  --accent: #f59e0b;
+  --text-p: #e2e8f0;
+  --text-s: #64748b;
+  --btn-num: #1e293b;
+  --btn-fn: #0f172a;
+  --display-bg: #000000;
+  --glow: rgba(245, 158, 11, 0.25);
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text-p);
+  }
+}
+
+.font-serif-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.font-calc-mono {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* Immersive UI Display glow */
+.display-unit-glow {
+  position: relative;
+  background-color: var(--display-bg);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.display-unit-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.6;
+}
+
+.current-val-glow {
+  text-shadow: 0 0 20px var(--glow);
+}
+
+/* Immersive UI Buttons */
+.btn-base {
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  letter-spacing: 0.5px;
+}
+
+.btn-num {
+  background: var(--btn-num);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.btn-num:hover {
+  background: #283548;
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+}
+
+.btn-num:active {
+  transform: translateY(0);
+  filter: brightness(0.9);
+}
+
+.btn-fn {
+  background: var(--btn-fn);
+  color: var(--text-s);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.btn-fn:hover {
+  background: #182238;
+  color: #94a3b8;
+  filter: brightness(1.3);
+  transform: translateY(-1px);
+}
+
+.btn-fn:active {
+  transform: translateY(0);
+}
+
+.btn-op {
+  background: var(--btn-fn);
+  color: var(--accent);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  font-weight: 700;
+}
+
+.btn-op:hover {
+  background: #1e2030;
+  color: #fbbf24;
+  filter: brightness(1.3);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-action {
+  background: var(--accent);
+  color: #0d0f12;
+  font-size: 24px;
+  font-weight: 800;
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.35);
+  border: 1px solid #fcd34d;
+}
+
+.btn-action:hover {
+  background: #fbbf24;
+  box-shadow: 0 6px 24px rgba(245, 158, 11, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-action:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+}
+
+/* Background Immersive Dark Texture */
+.bg-immersive {
+  background-color: var(--bg);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(30, 41, 59, 0.2) 0%, transparent 50%);
+}
+
+/* Custom scrollbar for history panel */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+

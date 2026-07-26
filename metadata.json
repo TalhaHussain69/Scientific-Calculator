@@ -1,0 +1,6 @@
+{
+  "name": "Scientific Calculator",
+  "description": "A sophisticated, fully functional Scientific Calculator with history, memory, trigonometric and logarithmic functions, and dark glassmorphic tablet UI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
